@@ -1,19 +1,16 @@
 import React from 'react'
-import { Form, InputGroup } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 
-function SearchBar({ searchTerm, onSearchChange }) {
-  return (
-    <div className="">
-      <InputGroup>
-        <InputGroup.Text></InputGroup.Text>
-        <Form.Control
-          type="text"
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-        />
-      </InputGroup>
-    </div>
-  )
+function SearchBar({ onSearch }) {
+    return (
+        <div className="mb-4">
+            <Form.Control
+                type="text"
+                placeholder="Search users by name..."
+                onChange={(e) => onSearch(e.target.value)}
+            />
+        </div>
+    )
 }
 
 export default SearchBar
